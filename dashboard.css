@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: system-ui, sans-serif;
+    font-family: "Roboto", sans-serif;
     background-color: #f3f4f6;
     color: #111827;
 }
@@ -59,6 +59,12 @@ body {
 
 .sidebar-nav ul:last-of-type {
     margin-top: 2rem;
+}
+
+.sidebar-nav .material-icons {
+    font-size: 1.2rem;
+    vertical-align: -0.2rem;
+    margin-right: 0.6rem;
 }
 
 /* Below is the header and its components (search, user-info) */
@@ -126,7 +132,7 @@ body {
     grid-template-columns: 1fr 300px;
     grid-template-rows: auto 1fr;
     gap: 1.5rem;
-    grid-template-areas: "projects announcement" "projects trending";
+    grid-template-areas: "projects announcements" "projects trending";
 }
 
 .main h3 {
@@ -167,6 +173,91 @@ body {
     gap: 1.5rem;
 }
 
+.hamburger, .toggle {
+    display: none;
+}
+
+/* This will make the dashboard be responsive depending on which display screen it is shown */
+
+@media (max-width: 900px) {
+    /* This will change the .main grid to only a single column */
+    .main {
+        grid-template-columns: 1fr;
+        grid-template-areas: "announcements" "projects" "trending";
+    } 
+
+    /* This will shrink the sidebar */
+    .container {
+        grid-template-columns: 180px 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Hide sidebar off-canvas */
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: "header" "main";
+    }
+
+    .sidebar {
+        position: fixed;
+        inset: 0 auto 0 0; /* top: 0, bottom: 0, left: 0 */
+        width: 220px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 10;
+    }
+
+    /* This is a Hamburger toggle (a pure CSS checkbox trick */
+
+    .hamburger {
+        display: block;
+    }
+
+    .toggle {
+        display: none;
+    }
+
+    /* When the checkbox is ticked, slide in the sidebar */
+    .toggle:checked + .hamburger {
+        color: #0ea5e9;
+    }
+
+    .toggle:checked ~ .sidebar {
+        transform: translateX(0);
+    }
+
+    /* Header becomes a single flex row */
+    .header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .hamburger {
+        order: 1;
+    }
+
+    .search {
+        order: 2;
+        flex: 1;
+    }
+
+    .user-info {
+        order: 3;
+    }
+
+    .actions {
+        order: 4;
+        gap: 0.5rem;
+    }
+
+    .actions button {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+    }
+}
 
 
 

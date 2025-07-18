@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
     <title>My Admin Dashboard</title>
 </head>
 <body>
@@ -14,23 +17,25 @@
             <nav class="sidebar-nav">
                 <h2>Dashboard</h2>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#">Messages</a></li>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">Tasks</a></li>
-                    <li><a href="#">Communities</a></li>
+                    <li><a href="#"><span class="material-icons md-18">home</span>Home</a></li>
+                    <li><a href="#"><span class="material-icons md-18">person</span>Profile</a></li>
+                    <li><a href="#"><span class="material-icons md-18">mail</span>Messages</a></li>
+                    <li><a href="#"><span class="material-icons md-18">history</span>History</a></li>
+                    <li><a href="#"><span class="material-icons md-18">task</span>Tasks</a></li>
+                    <li><a href="#"><span class="material-icons md-18">groups</span>Communities</a></li>
                 </ul>
                 <ul>
-                    <li><a href="#">Settings</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#"><span class="material-icons md-18">settings</span>Settings</a></li>
+                    <li><a href="#"><span class="material-icons md-18">help_outline</span>Support</a></li>
+                    <li><a href="#"><span class="material-icons md-18">lock</span>Privacy</a></li>
                 </ul>
             </nav>
         </aside>
 
         <!--This the header part-->
         <header class="header">
+            <input type="checkbox" id="toggle" class="toggle">
+            <label for="toggle" class="hamburger">☰</label>
             <div class="search">
                 <input type="search" placeholder="Search...">
             </div>
@@ -38,8 +43,8 @@
                 <img src="images/cat-cats.png" alt="avatar">
                 <span>Biggus Cattus</span>
             </div>
-            <div class="action">
-                <button>New</button>
+            <div class="actions">
+                <button>New</bu`tton>
                 <button>Upload</button>
                 <button>Share</button>
             </div>
@@ -98,5 +103,8 @@
         </main>
     </div>
     
+    <footer>
+        <p class="footer">The Odin Project</p>
+    </footer>
 </body>
 </html>
