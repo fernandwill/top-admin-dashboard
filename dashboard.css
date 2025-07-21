@@ -41,7 +41,6 @@ a:focus-visible, button:focus-visible {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
-    border-radius: var(--radius);
     box-shadow: var(--shadow-light);
 }
 
@@ -87,6 +86,7 @@ a:focus-visible, button:focus-visible {
 
 .header {
     display: flex;
+    grid-area: header;
     flex-direction: column;
     background: #fff;
     gap: 0.75rem;
@@ -115,7 +115,7 @@ a:focus-visible, button:focus-visible {
     font-size: 0.9rem;
 }
 
-.greeting {
+.greeting-msg {
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -180,6 +180,7 @@ a:focus-visible, button:focus-visible {
 
 .main {
     display: grid;
+    grid-area: main;
     background: #c3c3c3;
     grid-template-columns: 1fr 300px;
     grid-template-rows: auto 1fr;
@@ -188,8 +189,9 @@ a:focus-visible, button:focus-visible {
 }
 
 .main h3 {
-    margin: 0 0 0.75rem 0;
-    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 /* .main > h3:nth-of-type(1) {
@@ -199,6 +201,22 @@ a:focus-visible, button:focus-visible {
 .projects {
     grid-area: projects;
     margin: 1rem 1rem;
+}
+
+.card-icons {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.card-icons, .material-icons {
+    cursor: pointer;
+}
+
+.card-icons .material-icons:hover {
+    color:#a8acb6;
 }
 
 .projects, .announcements, .trending {
@@ -220,6 +238,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .card {
+    position: relative;
     background: #ffffff;
     padding: 1.25rem;
     border-radius: var(--radius);
@@ -238,12 +257,6 @@ a:focus-visible, button:focus-visible {
     border: none;
     border-top: 1px solid #e5e7eb;
     margin: 0;
-}
-
-.card:hover {
-    box-shadow: var(--shadow-medium);
-    transition: box-shadow .2s ease;
-    background: #91989f;
 }
 
 .cards {
@@ -297,7 +310,7 @@ a:focus-visible, button:focus-visible {
         justify-content: space-between;
     }
 
-    .greeting {
+    .greeting-msg {
         padding: 0.5rem 1rem;
         font-size: 1rem;
     }
