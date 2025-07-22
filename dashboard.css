@@ -107,12 +107,36 @@ a:focus-visible, button:focus-visible {
     gap: 0.75rem;
 }
 
-.search input {
+.search {
+    position: relative;
+    display: flex;
+    align-items: center;
     width: min(100%, 300px);
-    padding: 0.4rem 0.7rem;
+}
+
+.search-icon {
+    position: absolute;
+    left: 0.75rem;
+    width: 18px;
+    height: 18px;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+.search input {
+    width: 100%;
+    padding: 0.4rem 0.7rem 0.4rem 2.5rem;
     border: 1px solid #d1d5db;
     border-radius: 20px;
     font-size: 0.9rem;
+    background-color: #f3f4f6;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.search input:focus {
+    outline: none;
+    background-color: #ffffff;
+    border-color: #0ea5e9;
 }
 
 .greeting-section {
@@ -225,7 +249,7 @@ a:focus-visible, button:focus-visible {
 
 .projects {
     grid-area: projects;
-    margin: 1rem 1rem;
+    padding: 1rem;
 }
 
 .card-icons {
@@ -245,15 +269,41 @@ a:focus-visible, button:focus-visible {
 }
 
 .projects, .announcements, .trending {
-    padding-top: 0.75rem;
-    margin-bottom: 0.25rem;
+    padding: 1rem;
+}
+
+.trending-container {
+    background: #ffffff;
+    padding: 1.25rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-light);
 }
 
 .trending-card {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin: 1rem 1rem;
+    padding: 0.75rem 0;
+}
+
+.trending-card:not(:last-child) {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.trending-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.trending-info strong {
+    font-size: 0.9rem;
+    color: #111827;
+}
+
+.trending-info span {
+    font-size: 0.8rem;
+    color: #6b7280;
 }
 
 .trending-card img {
@@ -271,10 +321,32 @@ a:focus-visible, button:focus-visible {
     border-left: 4px solid #f59e0b;
 }
 
-.announcement-card, .trending-card {
+.announcement-container, .trending-container {
     background: #ffffff;
     padding: 1.25rem;
     box-shadow: var(--shadow-light);
+    border-radius: var(--radius);
+}
+
+.announcement-item {
+    padding: 0.75rem 0;
+}
+
+.announcement-item:not(:last-child) {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.announcement-item strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #111827;
+}
+
+.announcement-item p {
+    font-size: 0.8rem;
+    color: #6b7280;
+    line-height: 1.4;
 }
 
 .divider {
