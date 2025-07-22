@@ -115,6 +115,12 @@ a:focus-visible, button:focus-visible {
     font-size: 0.9rem;
 }
 
+.greeting-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .greeting-msg {
     display: flex;
     align-items: center;
@@ -174,6 +180,26 @@ a:focus-visible, button:focus-visible {
 
 .actions button:hover {
     background: #0284c7;
+}
+
+/* Notification bell styling */
+.notification-bell {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.notification-bell:hover {
+    background-color: #f3f4f6;
+}
+
+.notif-bell {
+    width: 24px;
+    height: 24px;
+    display: block;
 }
 
 /* This is the MAIN part where "Announcements", "Trending" is */
@@ -311,12 +337,17 @@ a:focus-visible, button:focus-visible {
         gap: 1rem;
     }
 
-    .notification-btn {
+    .notification-bell {
         background: none;
         border: none;
         cursor: pointer;
-        color: #4b5563;
-        transition: color 0.2s;
+        padding: 0;
+    }
+
+    .notif-bell {
+        width: 24px;
+        height: 24px;
+        display: block;
     }
 
     .notification-btn:hover {

@@ -1,184 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dashboard.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dashboard.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
     <title>My Admin Dashboard</title>
-    
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
+      <!--This is the sidebar menu-->
+      <aside class="sidebar">
+        <nav class="sidebar-nav">
+          <h2>Dashboard</h2>
+          <ul>
+            <li>
+              <a href="#"><span class="material-icons md-18">home</span>Home</a>
+            </li>
+            <li>
+              <a href="#"
+                ><span class="material-icons md-18">person</span>Profile</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><span class="material-icons md-18">mail</span>Messages</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><span class="material-icons md-18">history</span>History</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><span class="material-icons md-18">task</span>Tasks</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><span class="material-icons md-18">groups</span>Communities</a
+              >
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="#"
+                ><span class="material-icons md-18">settings</span>Settings</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><span class="material-icons md-18">help_outline</span
+                >Support</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><span class="material-icons md-18">lock</span>Privacy</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
 
-        <!--This is the sidebar menu-->
-        <aside class="sidebar">
-            <nav class="sidebar-nav">
-                <h2>Dashboard</h2>
-                <ul>
-                    <li><a href="#"><span class="material-icons md-18">home</span>Home</a></li>
-                    <li><a href="#"><span class="material-icons md-18">person</span>Profile</a></li>
-                    <li><a href="#"><span class="material-icons md-18">mail</span>Messages</a></li>
-                    <li><a href="#"><span class="material-icons md-18">history</span>History</a></li>
-                    <li><a href="#"><span class="material-icons md-18">task</span>Tasks</a></li>
-                    <li><a href="#"><span class="material-icons md-18">groups</span>Communities</a></li>
-                </ul>
-                <ul>
-                    <li><a href="#"><span class="material-icons md-18">settings</span>Settings</a></li>
-                    <li><a href="#"><span class="material-icons md-18">help_outline</span>Support</a></li>
-                    <li><a href="#"><span class="material-icons md-18">lock</span>Privacy</a></li>
-                </ul>
-            </nav>
-        </aside>
+      <!--This the header part-->
+      <header class="header">
+        <input type="checkbox" id="toggle" class="toggle" />
+        <label for="toggle" class="hamburger">☰</label>
 
-        <!--This the header part-->
-        <header class="header">
-            <input type="checkbox" id="toggle" class="toggle">
-            <label for="toggle" class="hamburger">☰</label>
-            
-            <div class="header-search">
-            <div class="search">
-                <input type="search" placeholder="Search...">
+        <div class="header-search">
+          <div class="search">
+            <input type="search" placeholder="Search..." />
+          </div>
+
+          <div class="header-right">
+            <button class="notification-bell" aria-label="Notifications">
+              <img
+                src="images/bell.svg"
+                alt="notification-bell"
+                class="notif-bell"
+              />
+            </button>
+            <div class="user-info">
+              <img src="images/cat-cats.png" alt="avatar" />
+              <span>Biggus Cattus</span>
             </div>
+          </div>
+        </div>
 
-            <div class="header-right">
-                <button class="notification-btn" aria-label="Notifications">
-                    <span class="material-icons md-18">notifications</span>
-                </button>
+        <div class="greeting-section">
+          <div class="greeting-msg">
+            <img
+              src="images/cat-cats.png"
+              alt="avatar"
+              class="greeting-avatar"
+            />
+            <div class="greeting-text">
+              Hello there, <br /><strong>@bigguscattus</strong>!
             </div>
+          </div>
 
-            <div class="header-right">
-                <div class="user-info">
-                    <img src="images/cat-cats.png" alt="avatar">
-                    <span>Biggus Cattus</span>
-                </div>
+          <div class="actions">
+            <button>New</button>
+            <button>Upload</button>
+            <button>Share</button>
+          </div>
+        </div>
+      </header>
 
-                <div class="actions">
-                    <button>New</button>
-                    <button>Upload</button>
-                    <button>Share</button>
-                </div>
-                </div>
-                </div>
-
-            <div class="greeting-msg">
-                <img src="images/cat-cats.png" alt="avatar" class="greeting-avatar">
-                <div class="greeting-text">Hello there, <br><strong>@bigguscattus</strong>!</div>
-            </div>
-        </header>
-
-        <!-- Main content (where the grid of cards information show up) -->
-        <main class="main">
+      <!-- Main content (where the grid of cards information show up) -->
+      <main class="main">
         <section class="projects">
-            <h3 class="section-heading">Your Projects</h3>
-            <div class="cards">
-                <article class="card">
-                    <h4>Super Cool Project</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium perferendis quod temporibus! Illo, amet tempora. Quod tempora libero esse quae distinctio, incidunt a explicabo odit. Id fugiat molestiae quasi possimus.</p>
-                    <div class="card-icons">
-                        <span class="material-icons md-18" title="Star">star_border</span>
-                        <span class="material-icons md-18" title="Watch">visibility</span>
-                        <span class="material-icons md-18" title="Fork">share</span>
-                    </div>
-                </article>
-                <article class="card">
-                    <h4>Impossible App</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium perferendis quod temporibus! Illo, amet tempora. Quod tempora libero esse quae distinctio, incidunt a explicabo odit. Id fugiat molestiae quasi possimus.</p>
-                    <div class="card-icons">
-                        <span class="material-icons md-18" title="Star">star_border</span>
-                        <span class="material-icons md-18" title="Watch">visibility</span>
-                        <span class="material-icons md-18" title="Fork">share</span>
-                    </div>
-                </article>
-                <article class="card">
-                    <h4>Ad Blocker</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium perferendis quod temporibus! Illo, amet tempora. Quod tempora libero esse quae distinctio, incidunt a explicabo odit. Id fugiat molestiae quasi possimus.</p>
-                    <div class="card-icons">
-                        <span class="material-icons md-18" title="Star">star_border</span>
-                        <span class="material-icons md-18" title="Watch">visibility</span>
-                        <span class="material-icons md-18" title="Fork">share</span>
-                    </div>
-                </article>
-                <article class="card">
-                    <h4>Money Maker</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium perferendis quod temporibus! Illo, amet tempora. Quod tempora libero esse quae distinctio, incidunt a explicabo odit. Id fugiat molestiae quasi possimus.</p>
-                    <div class="card-icons">
-                        <span class="material-icons md-18" title="Star">star_border</span>
-                        <span class="material-icons md-18" title="Watch">visibility</span>
-                        <span class="material-icons md-18" title="Fork">share</span>
-                    </div>
-                </article>
-                <article class="card">
-                    <h4>Photography Site</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium perferendis quod temporibus! Illo, amet tempora. Quod tempora libero esse quae distinctio, incidunt a explicabo odit. Id fugiat molestiae quasi possimus.</p>
-                    <div class="card-icons">
-                        <span class="material-icons md-18" title="Star">star_border</span>
-                        <span class="material-icons md-18" title="Watch">visibility</span>
-                        <span class="material-icons md-18" title="Fork">share</span>
-                    </div>
-                </article>
-                <article class="card">
-                    <h4>Shopping Card</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium perferendis quod temporibus! Illo, amet tempora. Quod tempora libero esse quae distinctio, incidunt a explicabo odit. Id fugiat molestiae quasi possimus.</p>
-                    <div class="card-icons">
-                        <span class="material-icons md-18" title="Star">star_border</span>
-                        <span class="material-icons md-18" title="Watch">visibility</span>
-                        <span class="material-icons md-18" title="Fork">share</span>
-                    </div>
-                </article>
-            </div>
+          <h3 class="section-heading">Your Projects</h3>
+          <div class="cards">
+            <article class="card">
+              <h4>Super Cool Project</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laudantium perferendis quod temporibus! Illo, amet tempora. Quod
+                tempora libero esse quae distinctio, incidunt a explicabo odit.
+                Id fugiat molestiae quasi possimus.
+              </p>
+              <div class="card-icons">
+                <span class="material-icons md-18" title="Star"
+                  >star_border</span
+                >
+                <span class="material-icons md-18" title="Watch"
+                  >visibility</span
+                >
+                <span class="material-icons md-18" title="Fork">share</span>
+              </div>
+            </article>
+            <article class="card">
+              <h4>Impossible App</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laudantium perferendis quod temporibus! Illo, amet tempora. Quod
+                tempora libero esse quae distinctio, incidunt a explicabo odit.
+                Id fugiat molestiae quasi possimus.
+              </p>
+              <div class="card-icons">
+                <span class="material-icons md-18" title="Star"
+                  >star_border</span
+                >
+                <span class="material-icons md-18" title="Watch"
+                  >visibility</span
+                >
+                <span class="material-icons md-18" title="Fork">share</span>
+              </div>
+            </article>
+            <article class="card">
+              <h4>Ad Blocker</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laudantium perferendis quod temporibus! Illo, amet tempora. Quod
+                tempora libero esse quae distinctio, incidunt a explicabo odit.
+                Id fugiat molestiae quasi possimus.
+              </p>
+              <div class="card-icons">
+                <span class="material-icons md-18" title="Star"
+                  >star_border</span
+                >
+                <span class="material-icons md-18" title="Watch"
+                  >visibility</span
+                >
+                <span class="material-icons md-18" title="Fork">share</span>
+              </div>
+            </article>
+            <article class="card">
+              <h4>Money Maker</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laudantium perferendis quod temporibus! Illo, amet tempora. Quod
+                tempora libero esse quae distinctio, incidunt a explicabo odit.
+                Id fugiat molestiae quasi possimus.
+              </p>
+              <div class="card-icons">
+                <span class="material-icons md-18" title="Star"
+                  >star_border</span
+                >
+                <span class="material-icons md-18" title="Watch"
+                  >visibility</span
+                >
+                <span class="material-icons md-18" title="Fork">share</span>
+              </div>
+            </article>
+            <article class="card">
+              <h4>Photography Site</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laudantium perferendis quod temporibus! Illo, amet tempora. Quod
+                tempora libero esse quae distinctio, incidunt a explicabo odit.
+                Id fugiat molestiae quasi possimus.
+              </p>
+              <div class="card-icons">
+                <span class="material-icons md-18" title="Star"
+                  >star_border</span
+                >
+                <span class="material-icons md-18" title="Watch"
+                  >visibility</span
+                >
+                <span class="material-icons md-18" title="Fork">share</span>
+              </div>
+            </article>
+            <article class="card">
+              <h4>Shopping Card</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laudantium perferendis quod temporibus! Illo, amet tempora. Quod
+                tempora libero esse quae distinctio, incidunt a explicabo odit.
+                Id fugiat molestiae quasi possimus.
+              </p>
+              <div class="card-icons">
+                <span class="material-icons md-18" title="Star"
+                  >star_border</span
+                >
+                <span class="material-icons md-18" title="Watch"
+                  >visibility</span
+                >
+                <span class="material-icons md-18" title="Fork">share</span>
+              </div>
+            </article>
+          </div>
         </section>
 
-            <!--This is the sidebar on the right for "Announcements"-->
-            <aside class="announcements">
-            <h3 class="section-heading">Announcements</h3>
-            <div class="announcement-card">
-                <strong>Site Maintenance</strong>
-                <p>Vestibulum condimentum tellus lacus, in accumsan elit maximus ac. Donec hendrerit sodales congue...</p>
-            </div>
-            <hr class="divider">
-            <div class="announcement-card">
-                <strong>Community Challenge</strong>
-                <p>Join the 30-day CSS challenge starting Monday!</p>
-            </div>
-            <hr class="divider">
-            <div class="announcement-card">
-                <strong>Updated Privacy Policy</strong>
-                <p>Phasellus efficitur nisi eget elit consectetur, eget condimentum ante auctor. Cras fringilla sagittis sem in mattis...</p>
-            </div>
-            </aside>
+        <!--This is the sidebar on the right for "Announcements"-->
+        <aside class="announcements">
+          <h3 class="section-heading">Announcements</h3>
+          <div class="announcement-card">
+            <strong>Site Maintenance</strong>
+            <p>
+              Vestibulum condimentum tellus lacus, in accumsan elit maximus ac.
+              Donec hendrerit sodales congue...
+            </p>
+          </div>
+          <hr class="divider" />
+          <div class="announcement-card">
+            <strong>Community Challenge</strong>
+            <p>Join the 30-day CSS challenge starting Monday!</p>
+          </div>
+          <hr class="divider" />
+          <div class="announcement-card">
+            <strong>Updated Privacy Policy</strong>
+            <p>
+              Phasellus efficitur nisi eget elit consectetur, eget condimentum
+              ante auctor. Cras fringilla sagittis sem in mattis...
+            </p>
+          </div>
+        </aside>
 
-            <!--This is the sidebar on the right for "Trending"-->
-            <aside class="trending">
-            <h3 class="section-heading">Trending</h3>
-            <div class="trending-card">
-                <img src="images/surprised-cats.png" alt="user">
-                <strong>@smolcatt</strong>
-                <span>World Peace Builder</span>
-            </div>
-            <div class="trending-card">
-                <img src="images/surprised-cats.png" alt="user">
-                <strong>@smolcatt</strong>
-                <span>World Peace Builder</span>
-            </div>
-            <div class="trending-card">
-                <img src="images/surprised-cats.png" alt="user">
-                <strong>@smolcatt</strong>
-                <span>World Peace Builder</span>
-            </div>
-            <div class="trending-card">
-                <img src="images/surprised-cats.png" alt="user">
-                <strong>@smolcatt</strong>
-                <span>World Peace Builder</span>
-            </div>
-            </aside>
-        </main>
+        <!--This is the sidebar on the right for "Trending"-->
+        <aside class="trending">
+          <h3 class="section-heading">Trending</h3>
+          <div class="trending-card">
+            <img src="images/surprised-cats.png" alt="user" />
+            <strong>@smolcatt</strong>
+            <span>World Peace Builder</span>
+          </div>
+          <div class="trending-card">
+            <img src="images/surprised-cats.png" alt="user" />
+            <strong>@smolcatt</strong>
+            <span>World Peace Builder</span>
+          </div>
+          <div class="trending-card">
+            <img src="images/surprised-cats.png" alt="user" />
+            <strong>@smolcatt</strong>
+            <span>World Peace Builder</span>
+          </div>
+          <div class="trending-card">
+            <img src="images/surprised-cats.png" alt="user" />
+            <strong>@smolcatt</strong>
+            <span>World Peace Builder</span>
+          </div>
+        </aside>
+      </main>
     </div>
-    
+
     <footer class="footer">
-        <p class="footer-p">The Odin Project</p>
+      <p class="footer-p">The Odin Project</p>
     </footer>
-</body>
+  </body>
 </html>
