@@ -222,6 +222,7 @@ button:focus-visible {
 
 /* Notification bell styling */
 .notification-bell {
+  position: relative;
   background: none;
   border: none;
   cursor: pointer;
@@ -238,6 +239,62 @@ button:focus-visible {
   width: 24px;
   height: 24px;
   display: block;
+}
+
+/* Notification message styling - Comic book speech bubble */
+.notification-message {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #ffffff;
+  color: #374151;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-medium);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  z-index: 10;
+  margin-top: 0.75rem;
+  border: 2px solid #0ea5e9;
+  font-weight: 500;
+  animation: popIn 0.3s ease-out;
+}
+
+/* Speech bubble triangle pointer */
+.notification-message::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #0ea5e9;
+}
+
+.notification-message::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  right: 21px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ffffff;
+}
+
+/* Pop-in animation */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 /* This is the MAIN part where "Announcements", "Trending" is */
